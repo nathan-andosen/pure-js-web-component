@@ -29,6 +29,10 @@ class FancyButton extends HTMLElement {
 
 
   connectedCallback() {
+    // No need to do this, just use the internal button element
+    // if (!this.hasAttribute('role')) this.setAttribute('role', 'button');
+    // if (!this.hasAttribute('tabindex')) this.setAttribute('tabindex', 0);
+
     // this.addEventListener('click', (e) => {
     //   console.log('Fancy button clicked...');
     //   e.preventDefault();
@@ -36,14 +40,14 @@ class FancyButton extends HTMLElement {
     // });
 
     const btn = this.shadowRoot.querySelector('button');
-    btn.addEventListener('click', (e) => {
-      console.log('Button element clicked...');
-      e.preventDefault();
-      e.stopPropagation();
-    });
+    // btn.addEventListener('click', (e) => {
+    //   console.log('Button element clicked...');
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    // });
   }
 
-  
+
 
 
   disconnectedCallback() {
